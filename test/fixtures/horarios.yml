@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dia: MyString
+  periodo: MyString
+  hora_inicio: 2017-11-09 21:28:14
+  hora_termino: 2017-11-09 21:28:14
+
+two:
+  dia: MyString
+  periodo: MyString
+  hora_inicio: 2017-11-09 21:28:14
+  hora_termino: 2017-11-09 21:28:14

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut: MyString
+  nombres: MyString
+  apellido_pat: MyString
+  apellido_mat: MyString
+  fecha_ingreso: 2017-11-09
+
+two:
+  rut: MyString
+  nombres: MyString
+  apellido_pat: MyString
+  apellido_mat: MyString
+  fecha_ingreso: 2017-11-09

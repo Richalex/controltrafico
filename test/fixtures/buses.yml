@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num_maquina: 1
+  placa_patente: MyString
+  anio_vehiculo: 1
+  marca_string: MyString
+  carroceria: MyString
+  numero_motor: MyString
+  numero_chasis: MyString
+  id_categoria: 1
+
+two:
+  num_maquina: 1
+  placa_patente: MyString
+  anio_vehiculo: 1
+  marca_string: MyString
+  carroceria: MyString
+  numero_motor: MyString
+  numero_chasis: MyString
+  id_categoria: 1

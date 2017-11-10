@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyString
+  recorrido: MyString
+  id_empresa: 1
+  id_horario: 1
+
+two:
+  descripcion: MyString
+  recorrido: MyString
+  id_empresa: 1
+  id_horario: 1

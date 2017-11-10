@@ -1,0 +1,2 @@
+class CategoriaBus < ApplicationRecord
+end
