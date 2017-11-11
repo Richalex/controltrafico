@@ -10,6 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require adminlte/jquery
+//= require adminlte/jquery-jvectormap-1.2.2.min
+//= require adminlte/jquery-jvectormap-world-mill-en
+//= require adminlte/jquery.sparkline
+//= require adminlte/jquery.slimscroll
+//= require adminlte/Chart
+//= require adminlte/dashboard2
+//= require adminlte/bootstrap
+//= require adminlte/fastclick
+//= require adminlte/adminlte
+//= require adminlte/demo
+//= require adminlte/icheck
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
