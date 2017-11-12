@@ -1,2 +1,68 @@
 <h1>Buses#index</h1>
 <p>Find me in app/views/buses/index.html.erb</p>
+<!-- Main content -->
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title">Listado Buses</h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>N° Maquina</th>
+        <th>Patente</th>
+        <th>Año Vehiculo</th>
+        <th>marca</th>
+        <th>Carroceria</th>
+        <th>N° Motor</th>
+        <th>N° Chasis</th>
+        <th>Mostrar</th>
+        <th>Editar</th>
+        <th>Borrar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @buses.each do |actual| %>
+          <tr>
+            <td><%= actual.num_maquina%></td>
+            <td><%= actual.placa_patente %></td>
+            <td><%= actual.anio_vehiculo %></td>
+            <td><%= actual.marca %></td>
+            <td><%= actual.carroceria %></td>
+            <td><%= actual.numero_motor %></td>
+            <td><%= actual.numero_chasis %></td>
+            <td><%= link_to 'Mostrar',actual  %></td>
+            <td><%= link_to 'Editar', actual%></td>
+            <td><%= link_to 'Borrar', actual, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+          </tr>
+      <%end%>
+      </tbody>
+      <tfoot>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /.box-body -->
+</div>
+<!-- /.box -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</section>
+<!-- /.content -->
+</div>
+
+<script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+        })
+    })
+</script>

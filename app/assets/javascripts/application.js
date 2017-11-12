@@ -15,9 +15,11 @@
 //= require adminlte/jquery-jvectormap-world-mill-en
 //= require adminlte/jquery.sparkline
 //= require adminlte/jquery.slimscroll
+//= require adminlte/jquery.dataTables
 //= require adminlte/Chart
 //= require adminlte/dashboard2
 //= require adminlte/bootstrap
+//= require adminlte/dataTables.bootstrap
 //= require adminlte/fastclick
 //= require adminlte/adminlte
 //= require adminlte/demo

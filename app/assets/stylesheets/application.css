@@ -17,6 +17,7 @@
  *= require adminlte/_all-skins
  *= require square/_all
  *= require adminlte/jquery-jvectormap
+ *= require adminlte/dataTables.bootstrap
  *= require_tree .
  *= require_self
  */
