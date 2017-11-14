@@ -5,7 +5,8 @@
 
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Listado Categorias</h3>
+          <h3 class="box-title">Listado Categorias
+            <%= link_to 'Agregar Categoria', nueva_categoria_path,:class =>'btn bg-olive margin' %></h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -18,14 +19,14 @@
             </tr>
             </thead>
             <tbody>
-            <% @categorias.each do |actual| %>
+            <% @categoria.each do |actual| %>
                 <tr>
                   <td><%= actual.id%></td>
                   <td></td>
                   <td><%= actual.descripcion %></td>
-                  <td><%= link_to 'Mostrar',actual  %></td>
-                  <td><%= link_to 'Editar', actual%></td>
-                  <td><%= link_to 'Borrar', actual, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+                  <td><%= link_to 'Mostrar', categoria_path(actual) %>  %></td>
+                  <td><%= link_to 'Editar', editar_categoria_path(actual) %></td>
+                  <td><%= link_to 'Borrar', categorias_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
                 </tr>
             <%end%>
             </tbody>

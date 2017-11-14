@@ -1,0 +1,7 @@
+<%= form_for(@horario, :html => { class: 'form_dark' })  do |f|%>
+    <%=f.text_field :dia , placeholder:"Dia"%>
+    <%=f.text_field :periodo , placeholder:"Periodo"%>
+    <%=f.text_field :hora_inicio , placeholder:"Hora Inicio"%>
+    <%=f.text_field :hora_termino , placeholder:"Hora Termino"%>
+    <%=f.submit "Guardar"%>
+<%end%>

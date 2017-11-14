@@ -7,12 +7,88 @@ Rails.application.routes.draw do
       get 'index' => "welcome#index"
       get 'login' => "welcome#login"
       get 'register' => "welcome#register"
-      get 'categorias/index'
-      get 'horarios/index'
       get 'asignaciones/index'
-      get 'buses/index'
-      get 'choferes/index'
-      get 'empresas/index'
+
+      #CRUD Horarios
+      # Index
+      get 'horarios' , to: 'horarios#index',as: 'horarios'
+      # Editar
+      get 'horarios/:id/editar', to: 'horarios#editar', as: 'editar_horario'
+      put 'horarios/:id', to: 'horarios#update'
+      patch 'horarios/:id', to: 'horarios#update'
+
+      # Nuevo
+      post 'horarios', to: 'horarios#crear'
+      get 'horarios/nuevo' , to: 'horarios#nuevo', as: 'nuevo_horario'
+      # Mostrar
+      get 'horarios/:id', to: 'horarios#mostrar', as: 'horario'
+      # Eliminar
+      delete 'horarios.:id' , to: 'horarios#eliminar'
+
+
+      #CRUD Categorias
+      # Index
+      get 'categorias' , to: 'categorias#index',as: 'categorias'
+      # Editar
+      get 'categorias/:id/editar', to: 'categorias#editar', as: 'editar_categoria'
+      put 'categorias/:id', to: 'categorias#update'
+      patch 'categorias/:id', to: 'categorias#update', as:'update_categoria',action: :update
+
+      # Nuevo
+      post 'categorias', to: 'categorias#crear'
+      get 'categorias/nuevo' , to: 'categorias#nuevo', as: 'nueva_categoria'
+      # Mostrar
+      get 'categorias/:id', to: 'categorias#mostrar', as: 'categoria'
+      # Eliminar
+      delete 'categorias.:id' , to: 'categorias#eliminar'
+
+      #CRUD Buses
+      # Index
+      get 'buses' , to: 'buses#index',as: 'buses'
+      # Editar
+      get 'buses/:id/editar', to: 'buses#editar', as: 'editar_bus'
+      put 'buses/:id', to: 'buses#update'
+      patch 'buses/:id', to: 'buses#update'
+
+      # Nuevo
+      post 'buses', to: 'buses#crear'
+      get 'buses/nuevo' , to: 'buses#nuevo', as: 'nuevo_bus'
+      # Mostrar
+      get 'buses/:id', to: 'buses#mostrar', as: 'bus'
+      # Eliminar
+      delete 'buses.:id' , to: 'buses#eliminar'
+
+          #CRUD choferes
+      # Index
+      get 'choferes/' , to: 'choferes#index', as: 'choferes'
+      # Editar
+      get 'choferes/:id/editar', to: 'choferes#editar', as: 'editar_chofer'
+      put 'choferes/:id', to: 'choferes#update', action: :update
+      patch 'choferes/:id', to: 'choferes#update', as:'update_chofer',action: :update
+      # Nuevo
+      get 'choferes/nuevo' , to: 'choferes#nuevo', as: 'nuevo_chofer'
+      post 'choferes/', to: 'choferes#crear', as: 'crear_chofer'
+      # Mostrar
+      get 'choferes/:id', to: 'choferes#mostrar', as: 'chofer'
+      # Eliminar
+      delete 'choferes.:id' , to: 'choferes#eliminar'
+
+          #CRUD empresas
+          # Index
+      get 'empresas' , to: 'empresas#index',as: 'empresas'
+          # Editar
+      get 'empresas/:id/editar', to: 'empresas#editar', as: 'editar_empresa'
+      put 'empresas/:id', to: 'empresas#update'
+      patch 'empresas/:id', to: 'empresas#update'
+
+          # Nuevo
+      post 'empresas', to: 'empresas#crear'
+      get 'empresas/nuevo' , to: 'empresas#nuevo', as: 'nueva_empresa'
+          # Mostrar
+      get 'empresas/:id', to: 'empresas#mostrar', as: 'empresa'
+          # Eliminar
+      delete 'empresas.:id' , to: 'empresas#eliminar'
+
       get 'rutas/index'
       get 'welcome/index'
       root 'welcome#index', as: :authenticated_root

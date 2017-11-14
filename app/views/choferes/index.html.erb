@@ -4,7 +4,8 @@
 <!-- Main content -->
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title">Listado Choferes</h3>
+    <h3 class="box-title">Listado Choferes
+      <%= link_to 'Agregar Chofer', nuevo_chofer_path,:class =>'btn bg-olive margin' %></h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body">
@@ -22,16 +23,16 @@
       </tr>
       </thead>
       <tbody>
-      <% @choferes.each do |actual| %>
+      <% @chofer.each do |actual| %>
           <tr>
             <td><%= actual.rut %></td>
             <td><%= actual.nombres %></td>
             <td><%= actual.apellido_pat %></td>
             <td><%= actual.apellido_mat %></td>
             <td><%= actual.fecha_ingreso %></td>
-            <td><%= link_to 'Mostrar',actual  %></td>
-            <td><%= link_to 'Editar', actual%></td>
-            <td><%= link_to 'Borrar', actual, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            <td><%= link_to 'Mostrar', chofer_path(actual) %>  %></td>
+            <td><%= link_to 'Editar', editar_chofer_path(actual) %></td>
+            <td><%= link_to 'Borrar', choferes_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
           </tr>
       <%end%>
       </tbody>

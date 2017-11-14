@@ -1,0 +1,12 @@
+<h1>Editando Chofer</h1>
+
+<%= form_for(@categoria, :url => update_categoria_path , :html => {:role => 'form'})  do |f|%>
+    <% if @categoria.errors.any? %>
+        <%= pluralize(@categoria.errors.count, "Errores") %>
+        <% @categoria.errors.full_messages.each do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>
+    <%=f.text_field :descripcion, placeholder:"Descripcion"%>
+    <%=f.submit "Guardar"%>
+<%end%>

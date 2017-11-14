@@ -3,7 +3,8 @@
 <!-- Main content -->
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title">Listado Buses</h3>
+    <h3 class="box-title">Listado Buses
+      <%= link_to 'Agregar Bus', nuevo_bus_path,:class =>'btn bg-olive margin' %></h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body">
@@ -23,7 +24,7 @@
       </tr>
       </thead>
       <tbody>
-      <% @buses.each do |actual| %>
+      <% @bus.each do |actual| %>
           <tr>
             <td><%= actual.num_maquina%></td>
             <td><%= actual.placa_patente %></td>
@@ -32,9 +33,9 @@
             <td><%= actual.carroceria %></td>
             <td><%= actual.numero_motor %></td>
             <td><%= actual.numero_chasis %></td>
-            <td><%= link_to 'Mostrar',actual  %></td>
-            <td><%= link_to 'Editar', actual%></td>
-            <td><%= link_to 'Borrar', actual, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            <td><%= link_to 'Mostrar', bus_path(actual) %>  %></td>
+            <td><%= link_to 'Editar', editar_bus_path(actual) %></td>
+            <td><%= link_to 'Borrar', buses_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
           </tr>
       <%end%>
       </tbody>

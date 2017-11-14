@@ -1,0 +1,10 @@
+<%= form_for(@categoria, :url => categorias_path , :html => {:role => 'form'})  do |f|%>
+    <% if @categoria.errors.any? %>
+        <%= pluralize(@categoria.errors.count, "Errores") %>
+        <% @categoria.errors.full_messages.each do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>
+    <%=f.text_field :descripcion, placeholder:"Descripcion"%>
+    <%=f.submit "Guardar"%>
+<%end%>

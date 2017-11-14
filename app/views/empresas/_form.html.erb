@@ -1,0 +1,6 @@
+<%= form_for(@empresa, :html => { class: 'form_dark' })  do |f|%>
+    <%=f.text_field :rut , placeholder:"Rut"%>
+    <%=f.text_field :nombre , placeholder:"Nombres"%>
+    <%=f.text_field :id_ruta , placeholder:"ruta"%>
+    <%=f.submit "Guardar"%>
+<%end%>

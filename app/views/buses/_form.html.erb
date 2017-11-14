@@ -1,0 +1,11 @@
+<%= form_for(@bus, :html => { class: 'form_dark' })  do |f|%>
+    <%=f.text_field :num_maquina , placeholder:"Numero Maquina"%>
+    <%=f.text_field :placa_patente , placeholder:"Patente"%>
+    <%=f.text_field :anio_vehiculo , placeholder:"Año Vehiculo"%>
+    <%=f.text_field :marca , placeholder:"Marca"%>
+    <%=f.text_field :carroceria , placeholder:"Carroceria"%>
+    <%=f.text_field :numero_motor , placeholder:"Numero Motor"%>
+    <%=f.text_field :numero_chasis , placeholder:"N° Chasis"%>
+    <%=f.text_field :id_categoria , placeholder:"Categoria"%>
+    <%=f.submit "Guardar"%>
+<%end%>

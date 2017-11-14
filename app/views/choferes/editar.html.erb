@@ -1,0 +1,32 @@
+<h1>Editando Chofer</h1>
+
+<%= form_for(@chofer ,:html => {:role => 'form'}) do |f| %>
+    <% if @chofer.errors.any? %>
+        <%= pluralize(@chofer.errors.count, "Errores") %>
+        <% @chofer.errors.full_messages.each do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>
+    <div>
+      <%= f.label :rut, "Rut:" %>
+      <%= f.text_field :rut %>
+    </div>
+    <div>
+      <%= f.label :nombres, "Nombres:" %>
+      <%= f.text_field :nombres %>
+    </div>
+    <div>
+      <%= f.label :apellido_pat, "Apellido Paterno:"  %>
+      <%= f.text_field :apellido_pat%>
+    </div>
+    <%= f.label :apellido_mat, "Apellido Materno:"  %>
+    <%= f.text_field :apellido_mat %>
+    <div>
+      <%= f.label :fecha_ingreso ,"Fecha Ingreso:"%>
+      <%= f.text_field :fecha_ingreso %>
+    </div>
+    <div>
+      <%= f.submit "Guardar" %>
+    </div>
+<% end %>
+
