@@ -24,7 +24,7 @@
                   <td><%= actual.id%></td>
                   <td></td>
                   <td><%= actual.descripcion %></td>
-                  <td><%= link_to 'Mostrar', categoria_path(actual) %>  %></td>
+                  <td><%= link_to 'Mostrar', categoria_path(actual) %> </td>
                   <td><%= link_to 'Editar', editar_categoria_path(actual) %></td>
                   <td><%= link_to 'Borrar', categorias_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
                 </tr>

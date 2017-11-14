@@ -1,21 +1,21 @@
 class RutasController < ApplicationController
-  before_action :set_empresa, only: [:editar,:update, :mostrar, :eliminar]
+  before_action :set_ruta, only: [:editar,:update, :mostrar, :eliminar]
 
   def index
-    @empresa = Empresa.all
+    @ruta = Ruta.all
   end
 
   # Crear nuevo
   def nuevo
-    @empresa = Empresa.new
+    @ruta = Ruta.new
   end
   def crear
-    @empresa=Empresa.new(empresa_params)
+    @ruta=Ruta.new(ruta_params)
     respond_to do |format|
-      if @empresa.save
-        format.html {redirect_to @empresa,notice: 'Se Agrego Una Nueva Empresa'}
+      if @ruta.save
+        format.html {redirect_to rutas_path(@ruta),notice: 'Se Agrego Una Nueva Ruta'}
       else
-        format.html{render :nueva_empresa_path}
+        format.html{render :nueva_ruta_path}
       end
     end
   end
@@ -29,8 +29,8 @@ class RutasController < ApplicationController
   end
   def update
     respond_to do |format|
-      if @empresa.update(empresa_params)
-        format.html{redirect_to @empresa, notice:'Se Edito Con Exito'}
+      if @ruta.update(ruta_params)
+        format.html{redirect_to update_ruta_path(@ruta), notice:'Se Edito Con Exito'}
       else
         render :editar
       end
@@ -39,19 +39,19 @@ class RutasController < ApplicationController
 
   # Eliminar
   def eliminar
-    @empresa.destroy
+    @ruta.destroy
     respond_to do |format|
-      format.html {redirect_to @empresa, notice: 'Eliminada con exito'}
+      format.html {redirect_to @ruta, notice: 'Eliminada con exito'}
     end
   end
 
   private
-  # Inicializar Chofer
-  def set_empresa
-    @empresa = Empresa.find(params[:id])
+  # Inicializar Ruta
+  def set_ruta
+    @ruta = Ruta.find(params[:id])
   end
   # Establecer Parametros
-  def empresa_params
-    params.require(:empresa).permit(:rut, :nombre, :id_ruta)
+  def ruta_params
+    params.require(:ruta).permit(:descripcion, :recorrido, :id_empresa, :id_horario)
   end
 end

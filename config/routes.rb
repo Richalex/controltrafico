@@ -89,7 +89,22 @@ Rails.application.routes.draw do
           # Eliminar
       delete 'empresas.:id' , to: 'empresas#eliminar'
 
-      get 'rutas/index'
+      #CRUD Rutas
+      # Index
+      get 'rutas' , to: 'rutas#index',as: 'rutas'
+      # Editar
+      get 'rutas/:id/editar', to: 'rutas#editar', as: 'editar_ruta'
+      put 'rutas/:id', to: 'rutas#update'
+      patch 'rutas/:id', to: 'rutas#update', as:'update_ruta',action: :update
+
+      # Nuevo
+      post 'rutas', to: 'rutas#crear'
+      get 'rutas/nuevo' , to: 'rutas#nuevo', as: 'nueva_ruta'
+      # Mostrar
+      get 'rutas/:id', to: 'rutas#mostrar', as: 'ruta'
+      # Eliminar
+      delete 'rutas.:id' , to: 'rutas#eliminar'
+
       get 'welcome/index'
       root 'welcome#index', as: :authenticated_root
     end

@@ -1,0 +1,7 @@
+<%= form_for(@ruta, :url => rutas_path, :html => { class: 'form_dark' })  do |f|%>
+    <%=f.text_field :descripcion , placeholder:"descripcion"%>
+    <%=f.text_field :recorrido , placeholder:"recorrido"%>
+    <%=f.text_field :id_empresa , placeholder:"empresa"%>
+    <%=f.text_field :id_horario , placeholder:"periodos"%>
+    <%=f.submit "Guardar"%>
+<%end%>

@@ -30,7 +30,7 @@
             <td><%= actual.apellido_pat %></td>
             <td><%= actual.apellido_mat %></td>
             <td><%= actual.fecha_ingreso %></td>
-            <td><%= link_to 'Mostrar', chofer_path(actual) %>  %></td>
+            <td><%= link_to 'Mostrar', chofer_path(actual) %> </td>
             <td><%= link_to 'Editar', editar_chofer_path(actual) %></td>
             <td><%= link_to 'Borrar', choferes_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
           </tr>
