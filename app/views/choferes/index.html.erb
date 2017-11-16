@@ -30,9 +30,9 @@
             <td><%= actual.apellido_pat %></td>
             <td><%= actual.apellido_mat %></td>
             <td><%= actual.fecha_ingreso %></td>
-            <td><%= link_to 'Mostrar', chofer_path(actual) %> </td>
-            <td><%= link_to 'Editar', editar_chofer_path(actual) %></td>
-            <td><%= link_to 'Borrar', choferes_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            <td><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-book"><%= link_to ' ', chofer_path(actual) %></i></button></td>
+            <td><button type="button" class="btn btn-info"><i class="glyphicon glyphicon-pencil"><%= link_to ' ', editar_chofer_path(actual) %></i></button></td>
+            <td><button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-trash"><%= link_to ' ', choferes_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></i></button></td>
           </tr>
       <%end%>
       </tbody>

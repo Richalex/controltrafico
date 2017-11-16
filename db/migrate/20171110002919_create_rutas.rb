@@ -1,6 +1,6 @@
-class CreateRuta < ActiveRecord::Migration[5.1]
+class CreateRutas < ActiveRecord::Migration[5.1]
   def change
-    create_table :ruta do |t|
+    create_table :rutas do |t|
       t.string :descripcion
       t.string :recorrido
       t.integer :id_empresa

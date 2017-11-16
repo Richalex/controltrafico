@@ -1,6 +1,6 @@
-class CreateChofers < ActiveRecord::Migration[5.1]
+class CreateChoferes < ActiveRecord::Migration[5.1]
   def change
-    create_table :chofers do |t|
+    create_table :choferes do |t|
       t.string :rut
       t.string :nombres
       t.string :apellido_pat
