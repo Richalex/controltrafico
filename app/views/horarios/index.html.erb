@@ -27,9 +27,9 @@
             <td><%= actual.periodo %></td>
             <td><%= actual.hora_inicio %></td>
             <td><%= actual.hora_termino%></td>
-            <td><%= link_to 'Mostrar', horario_path(actual) %>  %></td>
-            <td><%= link_to 'Editar', editar_horario_path(actual) %></td>
-            <td><%= link_to 'Borrar', horarios_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  horario_path(actual), class: 'btn btn-success' %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_horario_path(actual), class: 'btn btn-success' %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, horarios_path(actual), method: :delete, data: { confirm: '¿Está seguro?' }, class: 'btn btn-danger' %></td>
           </tr>
       <%end%>
       </tbody>

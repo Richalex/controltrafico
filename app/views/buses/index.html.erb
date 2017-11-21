@@ -33,9 +33,9 @@
             <td><%= actual.carroceria %></td>
             <td><%= actual.numero_motor %></td>
             <td><%= actual.numero_chasis %></td>
-            <td><%= link_to 'Mostrar', bus_path(actual) %>  %></td>
-            <td><%= link_to 'Editar', editar_bus_path(actual) %></td>
-            <td><%= link_to 'Borrar', buses_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  bus_path(actual), class: 'btn btn-success' %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_bus_path(actual), class: 'btn btn-info' %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, buses_path(actual), method: :delete, data: { confirm: '¿Está seguro?' }, class: 'btn btn-danger' %></td>
           </tr>
       <%end%>
       </tbody>

@@ -25,9 +25,9 @@
             <td><%= actual.rut%></td>
             <td><%= actual.nombre %></td>
             <td><%= actual.id_ruta %></td>
-            <td><%= link_to 'Mostrar', empresa_path(actual) %> </td>
-            <td><%= link_to 'Editar', editar_empresa_path(actual) %></td>
-            <td><%= link_to 'Borrar', empresas_path(actual), method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  empresa_path(actual), class: 'btn btn-success' %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_empresa_path(actual), class: 'btn btn-success' %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, empresas_path(actual), method: :delete, data: { confirm: '¿Está seguro?' }, class: 'btn btn-danger' %></td>
           </tr>
       <%end%>
       </tbody>
