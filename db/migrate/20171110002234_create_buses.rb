@@ -4,7 +4,7 @@ class CreateBuses < ActiveRecord::Migration[5.1]
       t.integer :num_maquina
       t.string :placa_patente
       t.integer :anio_vehiculo
-      t.string :marca_string
+      t.string :marca
       t.string :carroceria
       t.string :numero_motor
       t.string :numero_chasis
