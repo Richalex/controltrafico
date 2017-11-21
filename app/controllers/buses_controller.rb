@@ -52,6 +52,6 @@ class BusesController < ApplicationController
   end
   # Establecer Parametros
   def bus_params
-    params.require(:bus).permit(:num_maquina, :placa_patente, :anio_vehiculo,:marca,:carroceria,:numero_motor,:numero_chasis,:id_categoria)
+    params.require(:bus).permit(:num_maquina, :placa_patente, :anio_vehiculo, :marca, :carroceria,:numero_motor,:numero_chasis,:id_categoria)
   end
 end
