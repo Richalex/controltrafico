@@ -1,77 +1,79 @@
+<div class="box">
+  <div class="box-header">
+    <h1 class="box-title">Mostrar Chofer</h1>
+    <div class="right_col" role="main">
+      <div class="row">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
 
-<div class="right_col" role="main">
-  <div class="row">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="x_panel">
-          <div class="x_title">
-            <h2> Mostrar Chofer </h2>
-            <div class="clearfix"></div>
-          </div>
 
-          <div class="x_content">
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-            <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
-            <div class="container">
-              <div class="row">
-
+              <div class="x_content">
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
                 <div class="container">
                   <div class="row">
 
-                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                      <div class="form-group"></div>
-                      <strong>Nombres:</strong>
-                      <%= @chofer.nombres %>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                      <div class="form-group"></div>
-                      <label for=rut>Rut :</label>
-                      <%= @chofer.rut %>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                      <div class="form-group"></div>
-                      <label for=apellidopate>Apellido Paterno</label>
-                      <%= @chofer.apellido_pat %>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                      <div class="form-group"></div>
-                      <label for=apellidomate>Apellido Materno</label>
-                      <%= @chofer.apellido_mat %>
-                    </div>
-                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                      <div class="form-group"></div>
-                      <label for=fecha_ingreso>Fecha Ingreso</label>
-                      <%= @chofer.fecha_ingreso %>
-                    </div>
+
+                    <div class="container">
+                      <div class="row">
+
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <strong>Nombres:</strong>
+                          <%= @chofer.nombres %>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=rut>Rut :</label>
+                          <%= @chofer.rut %>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=apellidopate>Apellido Paterno</label>
+                          <%= @chofer.apellido_pat %>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=apellidomate>Apellido Materno</label>
+                          <%= @chofer.apellido_mat %>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=fecha_ingreso>Fecha Ingreso</label>
+                          <%= @chofer.fecha_ingreso %>
+                        </div>
 
 
-                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                      <div class="form-group"></div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
 
-                      <%= link_to 'Atrás', choferes_path , class:'btn btn-danger' %>
+                          <%= link_to 'Atrás', choferes_path , class:'btn btn-danger' %>
+                        </div>
+
+
+
+
+                      </div>
+
                     </div>
-
-
-
 
                   </div>
 
                 </div>
 
-              </div>
 
+              </div>
             </div>
 
 
+
+            <!-- /.modal-dialog -->
           </div>
         </div>
-
-
-
-        <!-- /.modal-dialog -->
       </div>
     </div>
   </div>
 </div>
+
