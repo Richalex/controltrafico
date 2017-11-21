@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20171110210519) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "asignaciones", id: :bigint, default: -> { "nextval('asignacions_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "asignaciones", force: :cascade do |t|
     t.integer "id_chofer"
     t.integer "id_bus"
     t.integer "id_empresa"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20171110210519) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "choferes", id: :bigint, default: -> { "nextval('chofers_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "choferes", force: :cascade do |t|
     t.string "rut"
     t.string "nombres"
     t.string "apellido_pat"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20171110210519) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rutas", id: :bigint, default: -> { "nextval('ruta_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "rutas", force: :cascade do |t|
     t.string "descripcion"
     t.string "recorrido"
     t.integer "id_empresa"
