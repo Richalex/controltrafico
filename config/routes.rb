@@ -112,7 +112,7 @@ Rails.application.routes.draw do
 
     unauthenticated do
 
-      get 'register' => "welcome#register"
+
       root 'devise/sessions#new', as: :unauthenticated_root
       match '*path' => redirect('/'), via: [:get, :post]
     end

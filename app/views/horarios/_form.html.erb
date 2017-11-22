@@ -1,7 +1,70 @@
 <%= form_for(@horario, :html => { class: 'form_dark' })  do |f|%>
-    <%=f.text_field :dia , placeholder:"Dia"%>
-    <%=f.text_field :periodo , placeholder:"Periodo"%>
-    <%=f.text_field :hora_inicio , placeholder:"Hora Inicio"%>
-    <%=f.text_field :hora_termino , placeholder:"Hora Termino"%>
-    <%=f.submit "Guardar"%>
+    <div class="right_col" role="main">
+      <div class="row">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+
+              <div class="x_content">
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+                <div class="container">
+                  <div class="row">
+
+
+                    <div class="container">
+                      <div class="row">
+
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=nombre>dia</label>
+                          <%=f.text_field :dia , class:'form-control'%>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=rut>periodo</label>
+                          <%=f.text_field :periodo , class:'form-control'%>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=apellidopate>hora inicio</label>
+                          <%=f.text_field :hora_inicio ,  class:'form-control'%>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=apellidopate>hora termino</label>
+                          <%=f.text_field :hora_termino ,  class:'form-control'%>
+                        </div>
+
+
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <%= f.submit "Guardar" , class:'btn btn-primary' %>
+                          <%= link_to 'Atrás', horarios_path , class:'btn btn-danger' %>
+                        </div>
+
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+            <!-- /.modal-dialog -->
+          </div>
+        </div>
+      </div>
+    </div>
 <%end%>
