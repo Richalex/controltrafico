@@ -1,5 +1,4 @@
-<h1>Horarios#index</h1>
-<p>Find me in app/views/horarios/index.html.erb</p>
+
 <!-- Main content -->
 <div class="box">
   <div class="box-header">
@@ -49,6 +48,14 @@
 </div>
 
 <script>
+
+$(document).ready(function() {
+  $('#example1').DataTable({
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+    }
+  });
+});
     $(function () {
         $('#example1').DataTable()
         $('#example2').DataTable({
