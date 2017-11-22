@@ -1,4 +1,4 @@
-<h1>Editando Chofer</h1>
+<h1>Editando Categoria</h1>
 
 <%= form_for(@categoria, :url => update_categoria_path , :html => {:role => 'form'})  do |f|%>
     <% if @categoria.errors.any? %>
@@ -7,6 +7,58 @@
             <%= error %>
         <% end %>
     <% end %>
-    <%=f.text_field :descripcion, placeholder:"Descripcion"%>
-    <%=f.submit "Guardar"%>
+    <div class="right_col" role="main">
+      <div class="row">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel">
+
+              <div class="x_content">
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+                <div class="container">
+                  <div class="row">
+
+
+                    <div class="container">
+                      <div class="row">
+
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=nombre>Descripcion</label>
+                          <%=f.text_field :descripcion , class:'form-control'%>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <label for=rut></label>
+                        </div>
+
+
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          <div class="form-group"></div>
+                          <%= f.submit "Guardar" , class:'btn btn-primary' %>
+                          <%= link_to 'Atrás', categorias_path , class:'btn btn-danger' %>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+            <!-- /.modal-dialog -->
+          </div>
+        </div>
+      </div>
+    </div>
 <%end%>
