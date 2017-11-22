@@ -19,45 +19,51 @@
 
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=nombre>Nombres</label>
+                          <label for=nombre>Numero de Maquia</label>
                           <%=f.text_field :num_maquina , class:'form-control'%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=rut>Rut</label>
+                          <label for=rut>Placa Patente</label>
                           <%=f.text_field :placa_patente , class:'form-control'%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=apellidopate>Apellido Paterno</label>
+                          <label for=apellidopate>Año Vehiculo</label>
                           <%=f.text_field :anio_vehiculo ,  class:'form-control'%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=apellidomate>Apellido Materno</label>
+                          <label for=apellidomate> Marca</label>
                           <%=f.text_field :marca ,  class:'form-control' %>
                         </div>
-                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=fecha_ingreso>Fecha Ingreso</label>
+                          <label for=fecha_ingreso>Carroceria</label>
                           <%=f.text_field :carroceria ,  class:'form-control'%>
                         </div>
-                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=fecha_ingreso>Fecha Ingreso</label>
+                          <label for=fecha_ingreso>Numero Motor</label>
                           <%=f.text_field :numero_motor ,  class:'form-control'%>
                         </div>
-                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=fecha_ingreso>Fecha Ingreso</label>
+                          <label for=fecha_ingreso>Numero Chasis</label>
                           <%=f.text_field :numero_chasis ,  class:'form-control'%>
                         </div>
-                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=fecha_ingreso>Fecha Ingreso</label>
-                          <%=f.text_field :id_categoria , class:'form-control'%>
+                          <label for=categoria>Categoria Bus</label>
+                          <select class="form-control" name="categoria" >
+                            <option value="2">MiniBus</option>
+                            <option value="1">TaxiBus</option>
+                            <option value="3">Bus</option>
+
+                          </select>
                         </div>
 
+                          <%=f.text_field :id_categoria , class:'form-control'%>
 
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
