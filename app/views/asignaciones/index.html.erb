@@ -1,30 +1,45 @@
 
 <!-- Main content -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
 <div class="box">
   <div class="box-header">
     <h3 class="box-title">Listado Asignaciones
-      <%= link_to 'Crear Asignacion', nuevo_chofer_path,:class =>'btn bg-olive margin' %></h3>
+      <td><button class="btn btn-primary" id="add" type="button"> <span class="texto" >Nueva Asignacion</span><span class="glyphicon glyphicon-refresh"></span></button></td>
+
   </div>
   <!-- /.box-header -->
   <div class="box-body">
     <table id="example1" class="table table-bordered table-striped">
       <thead>
       <tr>
-        <th>Rut</th>
-        <th>Nombres</th>
-        <th>Apellido Paterno</th>
-        <th>Apellido Materno</th>
-        <th>Fecha Ingreso</th>
-        <th>Mostrar</th>
+        <th>Chofer</th>
+        <th>Bus</th>
+        <th>Empresa</th>
+        <th>Recorrido</th>
+        <th>Horario</th>
+        <th>Guardar</th>
         <th>Editar</th>
         <th>Borrar</th>
       </tr>
       </thead>
       <tbody>
+      <tr>
+
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><% @chofer.each do |actual| %><option><%= actual.rut+' '+ actual.nombres
+        %></option><%end%></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><% @bus.each do |actual| %><option><%= actual.num_maquina %></option><%end%></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"></select></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-check"></i>'.html_safe,   class: 'btn btn-success' %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, class: 'btn btn-success' %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe,  class: 'btn btn-danger' %></td>
+      </tr>
       </tbody>
-      <tfoot>
-      </tfoot>
+
     </table>
+
   </div>
   <!-- /.box-body -->
 </div>
@@ -38,6 +53,17 @@
 </div>
 
 <script>
+
+$(document).ready(function(){
+ $("#add").on("click",function(){
+  $clone=$("table tbody tr:first").clone();
+  $clone.find("input").each(function(){
+   $(this).val("");
+  });
+  $("table tbody").append($clone);
+ });
+});
+
 
 $(document).ready(function() {
   $('#example1').DataTable({
@@ -59,3 +85,8 @@ $(document).ready(function() {
         })
     })
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
