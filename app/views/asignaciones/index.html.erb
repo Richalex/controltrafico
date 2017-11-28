@@ -14,7 +14,7 @@
       <thead>
       <tr>
         <th>Chofer</th>
-        <th>Bus</th>
+        <th>Numero de Bus</th>
         <th>Empresa</th>
         <th>Recorrido</th>
         <th>Horario</th>
@@ -26,8 +26,7 @@
       <tbody>
       <tr>
 
-        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><% @chofer.each do |actual| %><option><%= actual.rut+' '+ actual.nombres
-        %></option><%end%></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><% @chofer.each do |actual| %><option><%= actual.rut+' '+actual.nombres %></option><%end%></select></td>
         <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><% @bus.each do |actual| %><option><%= actual.num_maquina %></option><%end%></select></td>
         <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"></select></td>
         <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"></select></td>
