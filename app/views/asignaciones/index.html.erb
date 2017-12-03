@@ -26,11 +26,11 @@
       <tbody>
       <tr>
 
-        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><% @chofer.each do |actual| %><option><%= actual.rut+' '+actual.nombres %></option><%end%></select></td>
-        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><% @bus.each do |actual| %><option><%= actual.num_maquina %></option><%end%></select></td>
-        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"></select></td>
-        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"></select></td>
-        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><option></option> <% @chofer.each do |actual| %><option><%= actual.rut+' '+actual.nombres %></option><%end%></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><option></option> <% @bus.each do |actual| %><option><%= actual.placa_patente %></option><%end%></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><option></option> <% @empresa.each do |actual| %><option><%= actual.nombre %></option><%end%></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><option></option> <% @ruta.each do |actual| %><option><%= actual.id %></option><%end%></select></td>
+        <td><select class="selectpicker col-lg-12 col-sm-6 col-md-6 col-xs-12" data-live-search="true"><option></option> <% @horario.each do |actual| %><option><%= actual.periodo %></option><%end%></select></td>
         <td><%= link_to '<i class="glyphicon glyphicon-check"></i>'.html_safe,   class: 'btn btn-success' %></td>
         <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, class: 'btn btn-success' %></td>
         <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe,  class: 'btn btn-danger' %></td>
