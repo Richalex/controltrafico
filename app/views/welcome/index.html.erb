@@ -1,69 +1,164 @@
-<!-- Main content -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
+<style>
+  .x_panel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 17px;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #E6E9ED;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    opacity: 1;
+    transition: all .2s ease
+}
+
+.top_tiles {
+    margin-bottom: 0
+}
+.top_tiles .tile h2 {
+    font-size: 30px;
+    line-height: 30px;
+    margin: 3px 0 7px;
+    font-weight: bold
+}
+
+.tile-stats {
+    position: relative;
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid #E4E4E4;
+    -webkit-border-radius: 5px;
+    overflow: hidden;
+    padding-bottom: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 5px;
+    -moz-background-clip: padding;
+    border-radius: 5px;
+    background-clip: padding-box;
+    background: #FFF;
+    transition: all 300ms ease-in-out
+}
+.tile-stats:hover .icon i {
+    animation-name: transformAnimation;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    color: rgba(58, 58, 58, 0.41);
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: transformAnimation;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: transformAnimation;
+    -moz-animation-duration: .5s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease;
+    -moz-animation-fill-mode: forwards
+}
+.tile-stats .icon {
+    width: 20px;
+    height: 20px;
+    color: #BAB8B8;
+    position: absolute;
+    right: 53px;
+    top: 22px;
+    z-index: 1
+}
+.tile-stats .icon i {
+    margin: 0;
+    font-size: 60px;
+    line-height: 0;
+    vertical-align: bottom;
+    padding: 0
+}
+.tile-stats .count {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1.65857
+}
+.tile-stats .count,
+.tile-stats h3,
+.tile-stats p {
+    position: relative;
+    margin: 0;
+    margin-left: 10px;
+    z-index: 5;
+    padding: 0
+}
+.tile-stats h3 {
+    color: #BAB8B8
+}
+.tile-stats p {
+    margin-top: 5px;
+    font-size: 12px
+}
+.tile-stats>.dash-box-footer {
+    position: relative;
+    text-align: center;
+    margin-top: 5px;
+    padding: 3px 0;
+    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.1);
+    text-decoration: none
+}
+.tile-stats>.dash-box-footer:hover {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.15)
+}
+.tile-stats>.dash-box-footer:hover {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.15)
+}
+</style>
 <div class="box">
+<div class="box-body">
+<div class="x_panel">
+  <div class="x_title">
+    <h2>Bienvenidos<small></small></h2>
+    <div class="clearfix"></div>
+  </div>
 
-  <!-- /.box-header -->
-  <div class="box-body">
-    <div class="right_col" role="main">
-      <div class="">
-        <div class="">
-          <div class="">
-            <div class="x_panel">
-              <div class="x_title">
-                <h2>Bienvenidos<small></small></h2>
-                <div class="clearfix"></div>
-              </div>
+  <div class="row top_tiles">
+    <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i style="padding-top:30px;" class="fa fa-user" ></i></div>
+        <div class="count"><%=@datos[1] %></div>
+        <h3>Total Choferes</h3>
 
-              <div class="row top_tiles">
-                <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i style="padding-top:30px;" class="fa fa-user" ></i></div>
-                    <div class="count"></div>
-                    <h3>Total Choferes</h3>
-
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i style="padding-top:30px;" class="fa fa-bus"></i></div>
-                    <div class="count"></div>
-                    <h3>Total Buses</h3>
-
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i style="padding-top:30px;" class="fa fa-university"></i></div>
-                    <div class="count">179</div>
-                    <h3>Total Empresas</h3>
-
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i style="padding-top:30px;" class="fa fa-calendar"></i></div>
-                    <div class="count">179</div>
-                    <h3>Total Asignaciones</h3>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+    <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i style="padding-top:30px;" class="fa fa-bus"></i></div>
+        <div class="count"><%=@datos[0] %></div>
+        <h3>Total Buses</h3>
 
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i style="padding-top:30px;" class="fa fa-university"></i></div>
+        <div class="count"><%=@datos[2] %></div>
+        <h3>Total Empresas</h3>
+
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-6 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i style="padding-top:30px;" class="fa fa-calendar"></i></div>
+        <div class="count"><%=@datos[3] %></div>
+        <h3>Total Asignaciones</h3>
+
+      </div>
+    </div>
   </div>
-  <!-- /.box-body -->
 </div>
-<!-- /.box -->
 </div>
-<!-- /.col -->
 </div>
-<!-- /.row -->
-</section>
-<!-- /.content -->
-</div>
-
