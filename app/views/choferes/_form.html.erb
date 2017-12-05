@@ -1,9 +1,13 @@
 <%= form_for(@chofer, :url => choferes_path ,:html => {:role => 'form'}) do |f| %>
     <% if @chofer.errors.any? %>
-        <%= pluralize(@chofer.errors.count, "Errores") %>
-        <% @chofer.errors.full_messages.each do |error| %>
-            <%= error %>
-        <% end %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@chofer.errors.count, "Error") %> </h2>
+            <ul>
+              <% @chofer.errors.full_messages.each do |error| %>
+                  <li><%= error %></li>
+              <% end %>
+            </ul>
+        </div>
     <% end %>
 
 <div class="right_col" role="main">
@@ -26,27 +30,29 @@
                       <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group"></div>
                         <label for=nombre>Nombres</label>
-                        <%= f.text_field :nombres, class:'form-control'%>
+                        <%= f.text_field :nombres,:required => "true" , class:'form-control'%>
+                        <span class="help-inline">
                       </div>
                       <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group"></div>
                         <label for=rut>Rut</label>
-                        <%= f.text_field :rut , class:'form-control'%>
-                      </div>
+                        <%= f.text_field :rut, :id => "rut", :required => "true", :placeholder => "Ej: 12345612-3", autocomplete: "off",  class:'form-control', autofocus: true %>
+                        </div>
+
                       <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group"></div>
                         <label for=apellidopate>Apellido Paterno</label>
-                        <%= f.text_field :apellido_pat , class:'form-control'%>
+                        <%= f.text_field :apellido_pat,:required => "true" , class:'form-control'%>
                       </div>
                       <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                         <div class="form-group"></div>
                         <label for=apellidomate>Apellido Materno</label>
-                        <%= f.text_field :apellido_mat ,class:'form-control'%>
+                        <%= f.text_field :apellido_mat ,:required => "true" ,class:'form-control'%>
                       </div>
                       <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                         <div class="form-group"></div>
                         <label for=fecha_ingreso>Fecha Ingreso</label>
-                        <%= f.date_field :fecha_ingreso, class:'form-control', type:'date'%>
+                        <%= f.date_field :fecha_ingreso,:required => "true" , class:'form-control', type:'date'%>
                       </div>
 
 
@@ -78,4 +84,43 @@
     </div>
   </div>
 </div>
+
 <% end %>
+<script>
+    $( document ).ready(function() {
+
+        var Fn = {
+            // Valida el rut con su cadena completa "XXXXXXXX-X"
+            validaRut : function (rutCompleto) {
+                rutCompleto = rutCompleto.replace("‐","-");
+                if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
+                    return false;
+                var tmp     = rutCompleto.split('-');
+                var digv    = tmp[1];
+                var rut     = tmp[0];
+                if ( digv == 'K' ) digv = 'k' ;
+
+                return (Fn.dv(rut) == digv );
+            },
+            dv : function(T){
+                var M=0,S=1;
+                for(;T;T=Math.floor(T/10))
+                    S=(S+T%10*(9-M++%6))%11;
+                return S?S-1:'k';
+            }
+        }
+
+
+        $("#rut").change(function(){
+            if (Fn.validaRut( $("#rut").val() )){
+                $("#rutbueno").html("el rut esta correcto");
+
+            } else {
+                $("#rut").val("");
+                swal('El rut ingresado no es correcto','','warning');
+            }
+        });
+
+
+    });
+</script>

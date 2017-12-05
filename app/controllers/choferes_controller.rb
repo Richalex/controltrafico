@@ -1,6 +1,5 @@
 class ChoferesController < ApplicationController
   before_action :set_chofer, only: [:editar,:update, :mostrar, :eliminar]
-
   def index
     @chofer = Chofer.all
   end
@@ -15,7 +14,7 @@ class ChoferesController < ApplicationController
       if @chofer.save
         format.html {redirect_to choferes_path(@chofer),notice: 'Se Agrego Un Nuevo Chofer'}
       else
-        format.html{render :nuevo_chofer_path}
+        format.html {redirect_to nuevo_chofer_path}
       end
     end
   end
@@ -54,4 +53,5 @@ class ChoferesController < ApplicationController
   def chofer_params
     params.require(:chofer).permit(:rut, :nombres, :apellido_pat, :apellido_mat, :fecha_ingreso)
   end
+
 end
