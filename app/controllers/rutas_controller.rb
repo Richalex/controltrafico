@@ -15,7 +15,7 @@ class RutasController < ApplicationController
       if @ruta.save
         format.html {redirect_to rutas_path(@ruta),notice: 'Se Agrego Una Nueva Ruta'}
       else
-        format.html{render :nueva_ruta_path}
+        format.html{redirect_to :nueva_ruta_path}
       end
     end
   end

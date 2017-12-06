@@ -31,17 +31,17 @@
                           <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=Empresa>Empresa</label>
-                            <%= select_tag "Empresa", options_from_collection_for_select(@empresa, "id", "id"), class: " selectpicker form-control", data: { 'live-search' => 'true' } , :include_blank => "Seleccione Empresa"  %>
+                            <%= select_tag "Empresa", options_from_collection_for_select(@empresa, "id", "nombre"), class: " selectpicker form-control", data: { 'live-search' => 'true' } , :include_blank => "Seleccione Empresa"  %>
                           </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=ruta> Ruta</label>
-                          <%= select_tag "Ruta", options_from_collection_for_select(@ruta, "id", "id"), class: " selectpicker form-control", data: { 'live-search' => 'true' } , :include_blank => "Seleccione Ruta"  %>
+                          <%= select_tag "Ruta", options_from_collection_for_select(@ruta, "id", "descripcion"), class: " selectpicker form-control", data: { 'live-search' => 'true' } , :include_blank => "Seleccione Ruta"  %>
                         </div>
                         <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
                           <div class="form-group"></div>
                           <label for=horario>Horario</label>
-                          <%= select_tag "Horario", options_from_collection_for_select(@horario, "id", "id"), class: " selectpicker form-control", data: { 'live-search' => 'true' } , :include_blank => "Seleccione Horario"  %>
+                          <%= select_tag "Horario", options_from_collection_for_select(@horario, "id", "periodo"), class: " selectpicker form-control", data: { 'live-search' => 'true' } , :include_blank => "Seleccione Horario"  %>
                       </div>
                         <div class="col-lg-12 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>

@@ -5,7 +5,7 @@ class AsignacionesController < ApplicationController
     @empresa = Empresa.all
     @horario = Horario.all
     @ruta = Ruta.all
-    @asignaciones = Asignacion.all
+    @asignacion = Asignacion.all
   end
 
   # Crear nuevo
@@ -61,7 +61,7 @@ class AsignacionesController < ApplicationController
   end
   # Establecer Parametros
   def asignacion_params
-    params.require(:asignacion).permit(:id_chofer,:id_bus, :id_horario, :id_empresa,:id_ruta)
+    params.require(:asignacion).permit(:id_chofer, :id_bus, :id_horario, :id_empresa, :id_ruta)
   end
 
 end
