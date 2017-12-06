@@ -1,3 +1,4 @@
+
 <%= form_for(@bus, :html => { class: 'form_dark' })  do |f|%>
 
     <div class="right_col" role="main">
@@ -54,13 +55,8 @@
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=categoria>Categoria Bus</label>
-                          <select class="form-control" name="categoria" >
-                            <option value="2">MiniBus</option>
-                            <option value="1">TaxiBus</option>
-                            <option value="3">Bus</option>
-
-                          </select>
+                          <label for=Empresa>Categoria</label>
+                          <%= f.select :id_categoria, options_from_collection_for_select(@categorias, "id", "nombre"), {}, {class: " selectpicker form-control " ,  data: { live_search: 'true' } }  %>
                         </div>
 
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
