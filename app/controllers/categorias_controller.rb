@@ -52,6 +52,6 @@ class CategoriasController < ApplicationController
   end
   # Establecer Parametros
   def categoria_params
-    params.require(:categoria_bus).permit(:descripcion)
+    params.require(:categoria_bus).permit(:descripcion,:nombre)
   end
 end

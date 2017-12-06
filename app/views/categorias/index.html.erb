@@ -15,6 +15,7 @@
             <tr>
               <th>ID</th>
               <th>Descripcion</th>
+              <th>Tipo</th>
             </tr>
             </thead>
             <tbody>
@@ -22,6 +23,7 @@
                 <tr>
                   <td><%= actual.id%></td>
                   <td><%= actual.descripcion %></td>
+                  <td><%= actual.nombre %></td>
                   <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  categoria_path(actual), class: 'btn btn-success' %></td>
                   <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_categoria_path(actual), class: 'btn btn-success' %></td>
                   <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, categorias_path(actual), method: :delete, data: { confirm: '¿Está seguro?' }, class: 'btn btn-danger' %></td>

@@ -8,9 +8,11 @@ class BusesController < ApplicationController
   # Crear nuevo
   def nuevo
     @bus = Bus.new
+    @categorias = CategoriaBus.all
   end
   def crear
     @bus=Bus.new(bus_params)
+
     respond_to do |format|
       if @bus.save
         format.html {redirect_to @bus,notice: 'Se Agrego Un Nuevo Bus'}
