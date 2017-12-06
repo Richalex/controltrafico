@@ -1,15 +1,18 @@
 
-<!-- Main content -->
+<% if current_user %>
 <div class="box">
   <div class="box-header">
     <h3 class="box-title">Listado Asignaciones
 
-      <% if current_user %>
+
       <%= link_to 'Agregar  Asignaciones', nueva_asignacion_path,:class =>'btn bg-olive margin' %></h3>
-        <%end%>
+
   </div>
+
   <!-- /.box-header -->
+
   <div class="box-body">
+<%end%>
     <table id="example1" class="table table-bordered table-striped">
       <thead>
       <tr>
@@ -62,7 +65,7 @@
 </section>
 <!-- /.content -->
 </div>
-
+<% if current_user %>
 <script>
 
 $(document).ready(function() {
@@ -85,5 +88,5 @@ $(document).ready(function() {
         })
     })
 </script>
-
+<%end%>
 
