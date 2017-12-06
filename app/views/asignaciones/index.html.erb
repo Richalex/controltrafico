@@ -15,9 +15,12 @@
         <th>Empresa</th>
         <th>Ruta</th>
         <th>Horario</th>
+
+        <% if current_user %>
         <th>Mostrar</th>
         <th>Editar</th>
         <th>Borrar</th>
+        <%end%>
       </tr>
       </thead>
       <tbody>
@@ -29,9 +32,12 @@
             <td><%=actual.id_empresa %></td>
             <td><%=actual.id_ruta %></td>
             <td><%=actual.id_horario %></td>
+            <% if current_user %>
             <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  asignacion_path(actual), class: 'btn btn-success' %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_asignacion_path(actual), class: 'btn btn-info' %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, asignacion_path(actual), method: :delete, data: { confirm: '¿Está seguro?' }, class: 'btn btn-danger' %></td>
+            <%end%>
+
           </tr>
       <%end%>
       </tbody>

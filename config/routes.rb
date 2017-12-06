@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       # Mostrar
       get 'asignaciones/:id', to: 'asignaciones#mostrar', as: 'asignacion'
       # Eliminar
-      delete 'asignaciones.:id' , to: 'asignaciones#eliminar'
+      delete 'asignaciones/:id' , to: 'asignaciones#eliminar'
 
       #CRUD Horarios
       # Index
@@ -128,7 +128,9 @@ Rails.application.routes.draw do
 
     unauthenticated do
 
-
+      #CRUD Asignaciones
+      # Index
+      get 'asignaciones' , to: 'asignaciones#index'
       root 'devise/sessions#new', as: :unauthenticated_root
       match '*path' => redirect('/'), via: [:get, :post]
     end

@@ -1,4 +1,5 @@
 class AsignacionesController < ApplicationController
+  before_action :set_asignacion, only: [:editar,:update, :mostrar, :eliminar]
   def index
     @chofer = Chofer.all
     @bus = Bus.all
@@ -24,7 +25,7 @@ class AsignacionesController < ApplicationController
       if @asignacion.save
         format.html {redirect_to asignaciones_index_path(@asignacion),notice: 'Se Agrego Un Nueva Asignación'}
       else
-        format.html {redirect_to nuevo_asignacion_path}
+        format.html {redirect_to nueva_asignacion_path}
       end
     end
   end
@@ -34,14 +35,18 @@ class AsignacionesController < ApplicationController
   end
   # Actualizar/Editar
   def editar
-
+    @chofer = Chofer.all
+    @bus = Bus.all
+    @empresa = Empresa.all
+    @horario = Horario.all
+    @ruta = Ruta.all
   end
   def update
     respond_to do |format|
       if @asignacion.update(asignacion_params)
         format.html{redirect_to @asignacion, notice:'Se Edito Con Exito'}
       else
-        render :editar
+        format.html{render :editar}
       end
     end
   end
