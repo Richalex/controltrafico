@@ -22,7 +22,7 @@ class AsignacionesController < ApplicationController
     @asignacion=Asignacion.new(asignacion_params)
     respond_to do |format|
       if @asignacion.save
-        format.html {redirect_to @asignacion,notice: 'Se Agrego Un Nueva Asignación'}
+        format.html {redirect_to asignaciones_index_path(@asignacion),notice: 'Se Agrego Un Nueva Asignación'}
       else
         format.html{render :nueva_asignacion_path}
       end
