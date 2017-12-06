@@ -1,12 +1,12 @@
 class AsignacionesController < ApplicationController
   before_action :set_asignacion, only: [:editar,:update, :mostrar, :eliminar]
   def index
+    @asignacion = Asignacion.all
     @chofer = Chofer.all
     @bus = Bus.all
     @empresa = Empresa.all
     @horario = Horario.all
     @ruta = Ruta.all
-    @asignacion = Asignacion.all
   end
 
   # Crear nuevo
