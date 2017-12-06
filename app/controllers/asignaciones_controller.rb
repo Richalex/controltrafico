@@ -24,7 +24,7 @@ class AsignacionesController < ApplicationController
       if @asignacion.save
         format.html {redirect_to @asignacion,notice: 'Se Agrego Un Nueva Asignación'}
       else
-        format.html{render :nueva_asignacion_path}
+        format.html {redirect_to nuevo_asignacion_path}
       end
     end
   end

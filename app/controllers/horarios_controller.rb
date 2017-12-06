@@ -15,7 +15,7 @@ class HorariosController < ApplicationController
       if @horario.save
         format.html {redirect_to @horario,notice: 'Se Agrego Una Nueva Empresa'}
       else
-        format.html{render :nuevo_horario_path}
+        format.html {redirect_to nuevo_horario_path}
       end
     end
   end

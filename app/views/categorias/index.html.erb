@@ -14,7 +14,6 @@
             <thead>
             <tr>
               <th>ID</th>
-              <th>Nombre</th>
               <th>Descripcion</th>
             </tr>
             </thead>
@@ -22,7 +21,6 @@
             <% @categoria.each do |actual| %>
                 <tr>
                   <td><%= actual.id%></td>
-                  <td></td>
                   <td><%= actual.descripcion %></td>
                   <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  categoria_path(actual), class: 'btn btn-success' %></td>
                   <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_categoria_path(actual), class: 'btn btn-success' %></td>
