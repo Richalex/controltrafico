@@ -9,6 +9,22 @@ Rails.application.routes.draw do
       get 'register' => "welcome#register"
       get 'asignaciones/index'
 
+      #CRUD Asignaciones
+      # Index
+      get 'asignaciones' , to: 'asignaciones#index',as: 'asignaciones'
+      # Editar
+      get 'asignaciones/:id/editar', to: 'asignaciones#editar', as: 'editar_asignacion'
+      put 'asignaciones/:id', to: 'asignaciones#update'
+      patch 'asignaciones/:id', to: 'asignaciones#update', as:'update_asignacion',action: :update
+
+      # Nuevo
+      post 'asignaciones', to: 'asignaciones#crear'
+      get 'asignaciones/nuevo' , to: 'asignaciones#nuevo', as: 'nueva_asignacion'
+      # Mostrar
+      get 'asignaciones/:id', to: 'asignaciones#mostrar', as: 'asignacion'
+      # Eliminar
+      delete 'asignaciones.:id' , to: 'asignaciones#eliminar'
+
       #CRUD Horarios
       # Index
       get 'horarios' , to: 'horarios#index',as: 'horarios'

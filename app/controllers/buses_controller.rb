@@ -15,7 +15,7 @@ class BusesController < ApplicationController
       if @bus.save
         format.html {redirect_to @bus,notice: 'Se Agrego Un Nuevo Bus'}
       else
-        format.html{render :nuevo_bus_path}
+        format.html {redirect_to nuevo_bus_path}
       end
     end
   end
