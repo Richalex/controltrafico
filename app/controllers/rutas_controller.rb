@@ -9,6 +9,7 @@ class RutasController < ApplicationController
   def nuevo
     @ruta = Ruta.new
     @empresa=Empresa.all
+    @horario=Horario.all
   end
   def crear
     @ruta=Ruta.new(ruta_params)
