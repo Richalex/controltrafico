@@ -8,6 +8,7 @@ class RutasController < ApplicationController
   # Crear nuevo
   def nuevo
     @ruta = Ruta.new
+    @empresa=Empresa.all
   end
   def crear
     @ruta=Ruta.new(ruta_params)
@@ -49,6 +50,7 @@ class RutasController < ApplicationController
   # Inicializar Ruta
   def set_ruta
     @ruta = Ruta.find(params[:id])
+
   end
   # Establecer Parametros
   def ruta_params
