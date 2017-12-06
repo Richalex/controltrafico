@@ -30,15 +30,15 @@
       <% @asignacion.each do |actual| %>
           <tr>
             <% chofer = @chofer.find(actual.id_chofer.to_i)%>
-            <td><%= chofer.nombres %></td>>
+            <td><%= chofer.nombres %></td>
             <% bus = @bus.find(actual.id_bus.to_i)%>
-            <td><%= bus.num_maquina %></td>>
+            <td><%= bus.num_maquina %></td>
             <% empresa = @empresa.find(actual.id_empresa.to_i)%>
-            <td><%= empresa.nombre %></td>>
+            <td><%= empresa.nombre %></td>
             <% ruta = @ruta.find(actual.id_ruta.to_i)%>
-            <td><%= ruta.descripcion %></td>>
+            <td><%= ruta.descripcion %></td>
             <% horario = @horario.find(actual.id_horario.to_i)%>
-            <td><%= horario.periodo %></td>>
+            <td><%= horario.periodo %></td>
             <% if current_user %>
             <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  asignacion_path(actual), class: 'btn btn-success' %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_asignacion_path(actual), class: 'btn btn-info' %></td>
