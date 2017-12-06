@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
 <%= form_for(@ruta, :url => rutas_path, :html => { class: 'form_dark' })  do |f|%>
 
     <div class="right_col" role="main">
@@ -32,11 +34,10 @@
                           <label for=Empresa>Empresa</label>
                           <%= f.select :id_empresa, options_from_collection_for_select(@empresa, "id", "nombre"), {}, {class: " selectpicker form-control " ,  data: { live_search: 'true' } }  %>
                         </div>
-
-                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=apellidopate>Horario</label>
-                          <%=f.text_field :id_horario ,  class:'form-control'%>
+                          <label for=horario>Horario</label>
+                          <%= f.select :id_horario, options_from_collection_for_select(@horario, "id", "periodo"), {}, {class: " selectpicker form-control " ,  data: { live_search: 'true' } }  %>
                         </div>
 
 
@@ -69,3 +70,8 @@
       </div>
     </div>
 <%end%>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
