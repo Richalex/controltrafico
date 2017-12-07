@@ -19,23 +19,24 @@
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=nombre>dia</label>
-                          <%=f.text_field :dia , class:'form-control'%>
+                          <%=f.text_field :dia,:required => "true" , class:'form-control'%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=rut>periodo</label>
-                          <%=f.text_field :periodo , class:'form-control'%>
+                          <%=f.text_field :periodo ,:required => "true", class:'form-control'%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=apellidopate>hora inicio</label>
-                          <%=f.text_field :hora_inicio ,  class:'form-control'%>
+                          <%= f.time_select :hora_inicio, { prompt: {hour: 'Hora', minute: 'Minutos'}, minute_step: 10 }, { class:'form-control timepicker' ,:required => "true"} %>
+
                         </div>
 
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=apellidopate>hora termino</label>
-                          <%=f.text_field :hora_termino ,  class:'form-control'%>
+                          <%= f.time_select :hora_termino, { prompt: {hour: 'Hora', minute: 'Minutos'}, minute_step: 10 }, { class:'form-control timepicker' ,:required => "true"} %>
                         </div>
 
 

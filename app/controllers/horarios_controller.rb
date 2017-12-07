@@ -1,6 +1,6 @@
 class HorariosController < ApplicationController
   before_action :set_horario, only: [:editar,:update, :mostrar, :eliminar]
-
+  before_action :set_timezone
   def index
     @horario = Horario.all
   end
@@ -53,5 +53,8 @@ class HorariosController < ApplicationController
   # Establecer Parametros
   def horario_params
     params.require(:horario).permit(:dia, :periodo, :hora_inicio,:hora_termino)
+  end
+  def set_timezone
+    Time.zone = 'Santiago'
   end
 end

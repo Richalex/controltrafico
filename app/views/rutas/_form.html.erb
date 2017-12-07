@@ -22,22 +22,22 @@
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=nombre>Descripcion</label>
-                          <%=f.text_field :descripcion , class:'form-control'%>
+                          <%=f.text_field :descripcion ,:required => "true", class:'form-control'%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=rut>Recorrido</label>
-                          <%=f.text_field :recorrido , class:'form-control'%>
+                          <%=f.text_field :recorrido,:required => "true" , class:'form-control'%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=Empresa>Empresa</label>
-                          <%= f.select :id_empresa, options_from_collection_for_select(@empresa, "id", "nombre"), {}, {class: " selectpicker form-control " ,  data: { live_search: 'true' } }  %>
+                          <%= f.select :id_empresa, options_from_collection_for_select(@empresa, "id", "nombre"), {}, {class: " selectpicker form-control " ,  data: { live_search: 'true' },:required => "true" }  %>
                         </div>
                         <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
                           <div class="form-group"></div>
                           <label for=horario>Horario</label>
-                          <%= f.select :id_horario, options_from_collection_for_select(@horario, "id", "periodo"), {}, {class: " selectpicker form-control " ,  data: { live_search: 'true' } }  %>
+                          <%= f.select :id_horario, options_from_collection_for_select(@horario, "id", "periodo"), {}, {class: " selectpicker form-control " ,  data: { live_search: 'true' } ,:required => "true"}  %>
                         </div>
 
 

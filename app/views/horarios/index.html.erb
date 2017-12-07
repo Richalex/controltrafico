@@ -24,8 +24,13 @@
           <tr>
             <td><%= actual.dia%></td>
             <td><%= actual.periodo %></td>
-            <td><%= actual.hora_inicio %></td>
-            <td><%= actual.hora_termino%></td>
+            <%inicio = actual.hora_inicio.to_s%>
+            <% start = inicio.split(' ')  %>
+            <td><%=start[1]%></td>
+
+            <%termino = actual.hora_termino.to_s%>
+            <% final = termino.split(' ')  %>
+            <td><%=final[1]%></td>
             <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  horario_path(actual), class: 'btn btn-success' %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_horario_path(actual), class: 'btn btn-success' %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, horarios_path(actual), method: :delete, data: { confirm: '¿Está seguro?' }, class: 'btn btn-danger' %></td>

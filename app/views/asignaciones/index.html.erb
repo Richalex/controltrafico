@@ -13,6 +13,8 @@
 
   <div class="box-body">
 <%end%>
+<%fecha = Time.now%>
+<%=fecha.strftime("%H:%M")%>
     <table id="example1" class="table table-bordered table-striped">
       <thead>
       <tr>
@@ -40,8 +42,14 @@
             <td><%= empresa.nombre %></td>
             <% ruta = @ruta.find(actual.id_ruta.to_i)%>
             <td><%= ruta.descripcion %></td>
+
             <% horario = @horario.find(actual.id_horario.to_i)%>
-            <td><%= horario.periodo %></td>
+            <%inicio = horario.hora_inicio.to_s%>
+            <% start = inicio.split(' ')  %>
+            <%termino = horario.hora_termino.to_s%>
+            <% final = termino.split(' ')  %>
+            <td><%= horario.periodo.to_s+' '+start[1].to_s+' - '+final[1].to_s  %></td>
+
             <% if current_user %>
             <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  asignacion_path(actual), class: 'btn btn-success' %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_asignacion_path(actual), class: 'btn btn-success' %></td>

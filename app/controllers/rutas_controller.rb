@@ -3,6 +3,7 @@ class RutasController < ApplicationController
 
   def index
     @ruta = Ruta.all
+    @horario=Horario.all
   end
 
   # Crear nuevo

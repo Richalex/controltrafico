@@ -29,27 +29,27 @@
                             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                               <div class="form-group"></div>
                               <label for=nombre>Nombres</label>
-                              <%= f.text_field :nombres, class:'form-control'%>
+                              <%= f.text_field :nombres,:required => "true", class:'form-control'%>
                             </div>
                             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                               <div class="form-group"></div>
                               <label for=rut>Rut</label>
-                              <%= f.text_field :rut , class:'form-control'%>
+                              <%= f.text_field :rut,:required => "true" , class:'form-control'%>
                             </div>
                             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                               <div class="form-group"></div>
                               <label for=apellidopate>Apellido Paterno</label>
-                              <%= f.text_field :apellido_pat , class:'form-control'%>
+                              <%= f.text_field :apellido_pat,:required => "true" , class:'form-control'%>
                             </div>
                             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                               <div class="form-group"></div>
                               <label for=apellidomate>Apellido Materno</label>
-                              <%= f.text_field :apellido_mat ,class:'form-control'%>
+                              <%= f.text_field :apellido_mat,:required => "true" ,class:'form-control'%>
                             </div>
                             <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                               <div class="form-group"></div>
                               <label for=fecha_ingreso>Fecha Ingreso</label>
-                              <%= f.date_field :fecha_ingreso, class:'form-control', type:'date'%>
+                              <%= f.date_field :fecha_ingreso,:required => "true", class:'form-control', type:'date'%>
                             </div>
 
 

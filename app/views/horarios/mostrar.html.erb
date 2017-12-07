@@ -8,9 +8,14 @@
 </p>
 <p>
   <strong>Hora Inicio:</strong>
-  <%= @horario.hora_inicio %>
+  <%inicio = @horario.hora_inicio.to_s%>
+  <% start = inicio.split(' ')  %>
+  <%=start[1]%>
 </p>
 <p>
   <strong>Hora Termino:</strong>
-  <%= @horario.hora_termino %>
+  <%termino = @horario.hora_termino.to_s%>
+  <% final = termino.split(' ')  %>
+  <%=final[1]%>
 </p>
+
