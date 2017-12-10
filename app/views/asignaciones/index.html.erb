@@ -12,77 +12,81 @@
   <!-- /.box-header -->
 
   <div class="box-body">
+
 <%end%>
 <%fecha = Time.now%>
 <%=fecha.strftime("%H:%M")%>
-    <table id="example1" class="table table-bordered table-striped">
-      <thead>
-      <tr>
-        <th>Chofer</th>
-        <th>Bus</th>
-        <th>Empresa</th>
-        <th>Ruta</th>
-        <th>Horario</th>
+<div class="table-responsive">
+  <table id="example1" class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Chofer</th>
+      <th>Bus</th>
+      <th>Empresa</th>
+      <th>Ruta</th>
+      <th>Horario</th>
 
-        <% if current_user %>
-        <th>Mostrar</th>
-        <th>Editar</th>
-        <th>Borrar</th>
-        <%end%>
-      </tr>
-      </thead>
-      <tbody>
-      <% @asignacion.each do |actual| %>
-          <tr>
-            <% chofer = @chofer.find(actual.id_chofer.to_i)%>
-            <td><%= chofer.nombres %></td>
-            <% bus = @bus.find(actual.id_bus.to_i)%>
-            <td><%= bus.num_maquina %></td>
-            <% empresa = @empresa.find(actual.id_empresa.to_i)%>
-            <td><%= empresa.nombre %></td>
-            <% ruta = @ruta.find(actual.id_ruta.to_i)%>
-            <td><%= ruta.descripcion %></td>
+      <% if current_user %>
+          <th>Mostrar</th>
+          <th>Editar</th>
+          <th>Borrar</th>
+      <%end%>
+    </tr>
+    </thead>
+    <tbody>
+    <% @asignacion.each do |actual| %>
+        <tr>
+          <% chofer = @chofer.find(actual.id_chofer.to_i)%>
+          <td><%= chofer.nombres %></td>
+          <% bus = @bus.find(actual.id_bus.to_i)%>
+          <td><%= bus.num_maquina %></td>
+          <% empresa = @empresa.find(actual.id_empresa.to_i)%>
+          <td><%= empresa.nombre %></td>
+          <% ruta = @ruta.find(actual.id_ruta.to_i)%>
+          <td><%= ruta.descripcion %></td>
 
-            <% horario = @horario.find(actual.id_horario.to_i)%>
-            <%inicio = horario.hora_inicio.to_s%>
-            <% start = inicio.split(' ')  %>
-            <%termino = horario.hora_termino.to_s%>
-            <% final = termino.split(' ')  %>
-            <td><%= horario.periodo.to_s+' '+start[1].to_s+' - '+final[1].to_s  %></td>
+          <% horario = @horario.find(actual.id_horario.to_i)%>
+          <%inicio = horario.hora_inicio.to_s%>
+          <% start = inicio.split(' ')  %>
+          <%termino = horario.hora_termino.to_s%>
+          <% final = termino.split(' ')  %>
+          <td><%= horario.periodo.to_s+' '+start[1].to_s+' - '+final[1].to_s  %></td>
 
-            <% if current_user %>
-            <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  asignacion_path(actual), class: 'btn btn-success' %></td>
-            <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_asignacion_path(actual), class: 'btn btn-success' %></td>
-                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-trash"></i></button></td>
+          <% if current_user %>
+              <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  asignacion_path(actual), class: 'btn btn-success' %></td>
+              <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_asignacion_path(actual), class: 'btn btn-info' %></td>
+              <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-trash"></i></button></td>
 
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel"> Confirmacion</h4>
-                      </div>
-                      <div class="modal-body">
-                        ¿Seguro De Que Quieres Eliminar?
-                      </div>
-                      <div class="modal-footer" style="border: none">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                        <button class="btn btn-danger">
-                          <%= link_to 'Eliminar'.html_safe,
-                                      asignacion_path(actual), method: :delete %>
-                        </button>
-                      </div>
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel"> Confirmacion</h4>
+                    </div>
+                    <div class="modal-body">
+                      ¿Seguro De Que Quieres Eliminar?
+                    </div>
+                    <div class="modal-footer" style="border: none">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                      <button class="btn btn-danger">
+                        <%= link_to 'Eliminar'.html_safe,
+                                    asignacion_path(actual), method: :delete %>
+                      </button>
                     </div>
                   </div>
                 </div>
-            <%end%>
+              </div>
+          <%end%>
 
-          </tr>
-      <%end%>
-      </tbody>
-      <tfoot>
-      </tfoot>
-    </table>
+        </tr>
+    <%end%>
+    </tbody>
+    <tfoot>
+    </tfoot>
+  </table>
+</div>
+
   </div>
   <!-- /.box-body -->
 </div>
