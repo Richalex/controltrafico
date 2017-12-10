@@ -1,4 +1,6 @@
-
+<%def digito_verificador(rut)%>
+  <%[*0..9,'K'][rut.to_s.reverse.chars.inject([0,0]){|(i,a),n|[i+1,a-n.to_i*(i%6+2)]}[1]%11]%>
+<%end%>
 <%= form_for(@empresa, :html => { class: 'form_dark' })  do |f|%>
 
 
@@ -23,6 +25,7 @@
                           <div class="form-group"></div>
                           <label for=nombre>Rut</label>
                           <%=f.text_field :rut ,:required => "true", class:'form-control'%>
+                          <%=digito_verificador(:rut)%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
