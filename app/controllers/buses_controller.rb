@@ -27,7 +27,7 @@ class BusesController < ApplicationController
   end
   # Actualizar/Editar
   def editar
-
+    @categorias = CategoriaBus.all
   end
   def update
     respond_to do |format|
