@@ -15,7 +15,8 @@ class EmpresasController < ApplicationController
       if @empresa.save
         format.html {redirect_to @empresa,notice: 'Se Agrego Una Nueva Empresa'}
       else
-        format.html{render :nueva_empresa_path}
+        format.html{redirect_to nueva_empresa_path(@empresa)}
+        flash[:danger] = 'ERROR'
       end
     end
   end
