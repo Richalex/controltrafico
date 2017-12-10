@@ -53,9 +53,14 @@ class AsignacionesController < ApplicationController
 
   # Eliminar
   def eliminar
+    begin
     @asignacion.destroy
+    flash[:notice] = 'Se Borro Con Existo'
+  rescue ActiveRecord::StatementInvalid => error
+    flash[:notice] = 'No Se Puedo Eliminar'
+  end
     respond_to do |format|
-      format.html {redirect_to @asignacion, notice: 'Eliminada con exito'}
+      format.html {redirect_to @asignacion}
     end
   end
 

@@ -45,7 +45,7 @@ class ChoferesController < ApplicationController
     flash[:notice] = 'No Se Puede Borrar Porque Esta Siendo Usado'
   end
     respond_to do |format|
-      format.html {redirect_to choferes_path, notice: 'Eliminado con exito'}
+      format.html {redirect_to choferes_path}
     end
   end
 

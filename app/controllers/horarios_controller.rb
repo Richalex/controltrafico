@@ -46,7 +46,7 @@ class HorariosController < ApplicationController
     flash[:notice] = 'No Se Puede Borrar Porque Esta Siendo Usado'
   end
     respond_to do |format|
-      format.html {redirect_to @horario, notice: 'Eliminada con exito'}
+      format.html {redirect_to @horario}
     end
   end
 

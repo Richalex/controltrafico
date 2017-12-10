@@ -48,7 +48,7 @@ class BusesController < ApplicationController
     flash[:notice] = 'No Se Puede Borrar Porque Esta Siendo Usado'
   end
     respond_to do |format|
-      format.html {redirect_to @bus, notice: 'Eliminada con exito'}
+      format.html {redirect_to @bus}
     end
   end
 
