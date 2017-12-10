@@ -38,7 +38,12 @@ class ChoferesController < ApplicationController
 
   # Eliminar
   def eliminar
+    begin
     @chofer.destroy
+    flash[:notice] = 'Se Borro Con Existo'
+  rescue ActiveRecord::StatementInvalid => error
+    flash[:notice] = 'No Se Puede Borrar Porque Esta Siendo Usado'
+  end
     respond_to do |format|
       format.html {redirect_to choferes_path, notice: 'Eliminado con exito'}
     end
