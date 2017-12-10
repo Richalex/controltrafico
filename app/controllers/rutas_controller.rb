@@ -42,7 +42,12 @@ class RutasController < ApplicationController
 
   # Eliminar
   def eliminar
+    begin
     @ruta.destroy
+    flash[:notice] = 'Se Borro Con Existo'
+  rescue ActiveRecord::StatementInvalid => error
+    flash[:notice] = 'No Se Puede Borrar Porque Esta Siendo Usado'
+  end
     respond_to do |format|
       format.html {redirect_to @ruta, notice: 'Eliminada con exito'}
     end
