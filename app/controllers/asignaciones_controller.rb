@@ -23,7 +23,7 @@ class AsignacionesController < ApplicationController
     @asignacion=Asignacion.new(asignacion_params)
     respond_to do |format|
       if @asignacion.save
-        format.html {redirect_to asignaciones_index_path(@asignacion),notice: 'Se Agrego Un Nueva Asignación'}
+        format.html {redirect_to asignaciones_index_path(@asignacion),:success => 'Se Agrego Un Nueva Asignación' }
       else
         format.html {redirect_to nueva_asignacion_path}
       end
@@ -44,7 +44,7 @@ class AsignacionesController < ApplicationController
   def update
     respond_to do |format|
       if @asignacion.update(asignacion_params)
-        format.html{redirect_to @asignacion, notice:'Se Edito Con Exito'}
+        format.html{redirect_to @asignacion, flash[:success] = 'Se Edito Con Exito'}
       else
         format.html{render :editar}
       end
@@ -55,9 +55,9 @@ class AsignacionesController < ApplicationController
   def eliminar
     begin
     @asignacion.destroy
-    flash[:notice] = 'Se Borro Con Existo'
-  rescue ActiveRecord::StatementInvalid => error
-    flash[:notice] = 'No Se Puedo Eliminar'
+    flash[:success] = 'Se Borro Con Existo'
+    rescue ActiveRecord::StatementInvalid => error
+      flash[:danger] = 'No Se Puede Borrar Porque Esta Siendo Usado'
   end
     respond_to do |format|
       format.html {redirect_to @asignacion}
