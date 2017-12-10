@@ -7,61 +7,64 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-    <table id="example1" class="table table-bordered table-striped">
-      <thead>
-      <tr>
-        <th>N° Maquina</th>
-        <th>Patente</th>
-        <th>Año Vehiculo</th>
-        <th>marca</th>
-        <th>Carroceria</th>
-        <th>N° Motor</th>
-        <th>N° Chasis</th>
-        <th>Mostrar</th>
-        <th>Editar</th>
-        <th>Borrar</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @bus.each do |actual| %>
-          <tr>
-            <td><%= actual.num_maquina%></td>
-            <td><%= actual.placa_patente %></td>
-            <td><%= actual.anio_vehiculo %></td>
-            <td><%= actual.marca %></td>
-            <td><%= actual.carroceria %></td>
-            <td><%= actual.numero_motor %></td>
-            <td><%= actual.numero_chasis %></td>
-            <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  bus_path(actual), class: 'btn btn-success' %></td>
-            <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_bus_path(actual), class: 'btn btn-info' %></td>
-            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-trash"></i></button></td>
+    <div class="table-responsive">
+      <table id="example1" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>N° Maquina</th>
+          <th>Patente</th>
+          <th>Año Vehiculo</th>
+          <th>marca</th>
+          <th>Carroceria</th>
+          <th>N° Motor</th>
+          <th>N° Chasis</th>
+          <th>Mostrar</th>
+          <th>Editar</th>
+          <th>Borrar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @bus.each do |actual| %>
+            <tr>
+              <td><%= actual.num_maquina%></td>
+              <td><%= actual.placa_patente %></td>
+              <td><%= actual.anio_vehiculo %></td>
+              <td><%= actual.marca %></td>
+              <td><%= actual.carroceria %></td>
+              <td><%= actual.numero_motor %></td>
+              <td><%= actual.numero_chasis %></td>
+              <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  bus_path(actual), class: 'btn btn-success' %></td>
+              <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_bus_path(actual), class: 'btn btn-info' %></td>
+              <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-trash"></i></button></td>
 
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel"> Confirmacion</h4>
-                  </div>
-                  <div class="modal-body">
-                    ¿Seguro De Que Quieres Eliminar?
-                  </div>
-                  <div class="modal-footer" style="border: none">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                    <button class="btn btn-danger">
-                      <%= link_to 'Eliminar'.html_safe,
-                                  buses_path(actual), method: :delete %>
-                    </button>
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel"> Confirmacion</h4>
+                    </div>
+                    <div class="modal-body">
+                      ¿Seguro De Que Quieres Eliminar?
+                    </div>
+                    <div class="modal-footer" style="border: none">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                      <button class="btn btn-danger">
+                        <%= link_to 'Eliminar'.html_safe,
+                                    buses_path(actual), method: :delete %>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </tr>
-      <%end%>
-      </tbody>
-      <tfoot>
-      </tfoot>
-    </table>
+            </tr>
+        <%end%>
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+
   </div>
   <!-- /.box-body -->
 </div>
