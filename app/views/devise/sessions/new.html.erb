@@ -23,13 +23,13 @@
 
 <body style="background:#ffff" class="hold-transition login-page">
 <div align="Center"> <img alt="" src="../../assets/img/logolanderos.jpg"></div>
-<div  class="login-box">
+<div   style="border:1px solid; border-color:#E2E2E2; background:#DAD9D9" class="login-box ">
 
   <div class="login-logo">
     <a href="/"><b>Sistema De Control</b></a>
   </div>
   <!-- /.login-logo -->
-  <div   class="login-box-body">
+  <div style="border:1px solid; border-color:#E2E2E2"  class="login-box-body">
     <p class="login-box-msg">Ingresa tus Datos para Ingresar</p>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
