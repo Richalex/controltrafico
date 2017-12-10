@@ -53,7 +53,28 @@
             <% if current_user %>
             <td><%= link_to '<i class="glyphicon glyphicon-book"></i>'.html_safe,  asignacion_path(actual), class: 'btn btn-success' %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe,  editar_asignacion_path(actual), class: 'btn btn-success' %></td>
-            <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, asignacion_path(actual), method: :delete, data: { confirm: '¿Está seguro?' }, class: 'btn btn-danger' %></td>
+                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-trash"></i></button></td>
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel"> Confirmacion</h4>
+                      </div>
+                      <div class="modal-body">
+                        ¿Seguro De Que Quieres Eliminar?
+                      </div>
+                      <div class="modal-footer" style="border: none">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                        <button class="btn btn-danger">
+                          <%= link_to 'Eliminar'.html_safe,
+                                      asignacion_path(actual), method: :delete %>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             <%end%>
 
           </tr>
