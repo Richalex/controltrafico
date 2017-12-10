@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require sweetalert2
 //= require adminlte/jquery
 //= require adminlte/jquery-jvectormap-1.2.2.min
 //= require adminlte/jquery-jvectormap-world-mill-en
@@ -25,4 +26,5 @@
 //= require adminlte/demo
 //= require adminlte/icheck
 //= require rails-ujs
+//= require sweet-alert-confirm.js
 //= require_tree .
