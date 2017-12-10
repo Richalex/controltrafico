@@ -28,7 +28,8 @@ class RutasController < ApplicationController
   end
   # Actualizar/Editar
   def editar
-
+    @empresa=Empresa.all
+    @horario=Horario.all
   end
   def update
     respond_to do |format|
