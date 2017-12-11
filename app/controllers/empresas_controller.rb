@@ -12,11 +12,18 @@ class EmpresasController < ApplicationController
   def crear
     @empresa=Empresa.new(empresa_params)
     respond_to do |format|
-      if @empresa.save
-        format.html {redirect_to @empresa,notice: 'Se Agrego Una Nueva Empresa'}
+      if @empresa.valid?
+        if @empresa.save
+          format.html { redirect_to @empresa, notice: 'Empresa Creada Satisfactoriamente' }
+          format.json { render :mostrar, status: :created, location: @empresa }
+        else
+          format.html { render :nuevo }
+          format.json { render json: @empresa.errors, status: :unprocessable_entity }
+        end
       else
-        format.html{redirect_to nueva_empresa_path(@empresa)}
-        flash[:danger] = 'ERROR'
+        format.html { render :nuevo }
+        format.json { render json: @empresa.errors, status: :unprocessable_entity }
+
       end
     end
   end

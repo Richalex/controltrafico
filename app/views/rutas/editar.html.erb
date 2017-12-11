@@ -1,12 +1,6 @@
 <h1>Editando Ruta</h1>
 
 <%= form_for(@ruta, :url => update_ruta_path , :html => { class: 'form_dark' })  do |f|%>
-    <% if @ruta.errors.any? %>
-        <%= pluralize(@ruta.errors.count, "Errores") %>
-        <% @ruta.errors.full_messages.each do |error| %>
-            <%= error %>
-        <% end %>
-    <% end %>
 
     <div class="right_col" role="main">
       <div class="row">
@@ -17,7 +11,15 @@
               <div class="x_content">
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
+                <% if @ruta.errors.any? %>
+                  <div class="alert alert-danger">
+                    <a class="close" data-dismiss="alert"> × </a>
+                    <Strong><%= pluralize(@ruta.errors.count, "Error") %></Strong>
+                    <% @ruta.errors.full_messages.each do |error| %>
+                      <li>Error! <%= error %></li>
+                    <% end %>
+                <% end %>
+                </div>
                 <div class="container">
                   <div class="row">
 

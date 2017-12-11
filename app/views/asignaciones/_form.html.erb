@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 <%= form_for(@asignacion, :html => { class: 'form_dark' })  do |f|%>
-
-    <div class="right_col" role="main">
+  <div class="right_col" role="main">
       <div class="row">
         <div class="row">
           <div class="col-md-12">
@@ -10,7 +9,15 @@
               <div class="x_content">
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
+                <% if @asignacion.errors.any? %>
+                  <div class="alert alert-danger">
+                    <a class="close" data-dismiss="alert"> × </a>
+                    <Strong><%= pluralize(@asignacion.errors.count, "Error") %></Strong>
+                    <% @asignacion.errors.full_messages.each do |error| %>
+                      <li>Error! <%= error %></li>
+                    <% end %>
+                <% end %>
+                </div>
                 <div class="container">
                   <div class="row">
 
@@ -83,6 +90,7 @@
 
 
 <%end%>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
 <!-- (Optional) Latest compiled and minified JavaScript translation files -->

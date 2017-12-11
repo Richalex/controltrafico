@@ -8,7 +8,15 @@
               <div class="x_content">
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
+                <% if @horario.errors.any? %>
+                  <div class="alert alert-danger">
+                    <a class="close" data-dismiss="alert"> × </a>
+                    <Strong><%= pluralize(@horario.errors.count, "Error") %></Strong>
+                    <% @horario.errors.full_messages.each do |error| %>
+                      <li>Error! <%= error %></li>
+                    <% end %>
+                <% end %>
+                </div>
                 <div class="container">
                   <div class="row">
 

@@ -1,11 +1,6 @@
 
 <%= form_for(@chofer ,:html => {:role => 'form'}) do |f| %>
-    <% if @chofer.errors.any? %>
-        <%= pluralize(@chofer.errors.count, "Errores") %>
-        <% @chofer.errors.full_messages.each do |error| %>
-            <%= error %>
-        <% end %>
-    <% end %>
+
 
     <div class="box">
       <div class="box-header">
@@ -18,7 +13,15 @@
                   <div class="x_content">
                     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
+                    <% if @chofer.errors.any? %>
+                      <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert"> × </a>
+                        <Strong><%= pluralize(@chofer.errors.count, "Error") %></Strong>
+                        <% @chofer.errors.full_messages.each do |error| %>
+                          <li>Error! <%= error %></li>
+                        <% end %>
+                    <% end %>
+                    </div>
                     <div class="container">
                       <div class="row">
 

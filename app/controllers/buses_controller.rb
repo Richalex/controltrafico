@@ -11,13 +11,20 @@ class BusesController < ApplicationController
     @categorias = CategoriaBus.all
   end
   def crear
+    @categorias=CategoriaBus.all
     @bus=Bus.new(bus_params)
-
     respond_to do |format|
-      if @bus.save
-        format.html {redirect_to @bus,notice: 'Se Agrego Un Nuevo Bus'}
+      if @bus.valid?
+        if @bus.save
+          format.html { redirect_to @bus, notice: 'Bus Creado Correctamente' }
+          format.json { render :mostrar, status: :created, location: @bus }
+        else
+          format.html { render :nuevo }
+          format.json { render json: @bus.errors, status: :unprocessable_entity }
+        end
       else
-        format.html {redirect_to nuevo_bus_path}
+        format.html { render :nuevo }
+        format.json { render json: @bus.errors, status: :unprocessable_entity }
       end
     end
   end

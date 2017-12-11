@@ -11,10 +11,17 @@ class ChoferesController < ApplicationController
   def crear
     @chofer=Chofer.new(chofer_params)
     respond_to do |format|
-      if @chofer.save
-        format.html {redirect_to choferes_path(@chofer),notice: 'Se Agrego Un Nuevo Chofer'}
+      if @chofer.valid?
+        if @chofer.save
+          format.html { redirect_to @chofer, notice: 'Asignacion Creada Satisfactoriamente' }
+          format.json { render :mostrar, status: :created, location: @chofer }
+        else
+          format.html { render :nuevo }
+          format.json { render json: @chofer.errors, status: :unprocessable_entity }
+        end
       else
-        format.html {redirect_to nuevo_chofer_path}
+        format.html { render :nuevo }
+        format.json { render json: @chofer.errors, status: :unprocessable_entity }
       end
     end
   end

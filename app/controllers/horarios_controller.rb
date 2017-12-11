@@ -12,10 +12,17 @@ class HorariosController < ApplicationController
   def crear
     @horario= Horario.new(horario_params)
     respond_to do |format|
-      if @horario.save
-        format.html {redirect_to @horario,notice: 'Se Agrego Una Nueva Empresa'}
+      if @horario.valid?
+        if @horario.save
+          format.html { redirect_to @horario, notice: 'Horario Creado Satisfactoriamente' }
+          format.json { render :mostrar, status: :created, location: @horario }
+        else
+          format.html { render :nuevo }
+          format.json { render json: @horario.errors, status: :unprocessable_entity }
+        end
       else
-        format.html {redirect_to nuevo_horario_path}
+        format.html { render :nuevo }
+        format.json { render json: @horario.errors, status: :unprocessable_entity }
       end
     end
   end

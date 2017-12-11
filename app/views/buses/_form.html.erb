@@ -10,7 +10,15 @@
               <div class="x_content">
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
+                <% if @bus.errors.any? %>
+                  <div class="alert alert-danger">
+                    <a class="close" data-dismiss="alert"> × </a>
+                    <Strong><%= pluralize(@bus.errors.count, "Error") %></Strong>
+                    <% @bus.errors.full_messages.each do |error| %>
+                      <li>Error! <%= error %></li>
+                    <% end %>
+                <% end %>
+                </div>
                 <div class="container">
                   <div class="row">
 
@@ -20,7 +28,7 @@
 
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
-                          <label for=nombre>Numero de Maquia</label>
+                          <label for=nombre>Numero de Maquina</label>
                           <%=f.text_field :num_maquina ,:required => "true", class:'form-control' %>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -31,7 +39,7 @@
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
                           <label for=apellidopate>Año Vehiculo</label>
-                          <%=f.text_field :anio_vehiculo ,:required => "true",  class:'form-control' %>
+                          <%= f.select :id_categoria, (Time.zone.now.year - 20)..(Time.zone.now.year), {}, {class: " selectpicker form-control " ,  data: { live_search: 'true' },:required => "true" }%>
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>

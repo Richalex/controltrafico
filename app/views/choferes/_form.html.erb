@@ -1,14 +1,4 @@
 <%= form_for(@chofer, :url => choferes_path ,:html => {:role => 'form'}) do |f| %>
-    <% if @chofer.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@chofer.errors.count, "Error") %> </h2>
-            <ul>
-              <% @chofer.errors.full_messages.each do |error| %>
-                  <li><%= error %></li>
-              <% end %>
-            </ul>
-        </div>
-    <% end %>
 
 <div class="right_col" role="main">
   <div class="row">
@@ -19,7 +9,15 @@
           <div class="x_content">
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
             <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
+            <% if @chofer.errors.any? %>
+              <div class="alert alert-danger">
+                <a class="close" data-dismiss="alert"> × </a>
+                <Strong><%= pluralize(@chofer.errors.count, "Error") %></Strong>
+                <% @chofer.errors.full_messages.each do |error| %>
+                  <li>Error! <%= error %></li>
+                <% end %>
+            <% end %>
+            </div>
               <div class="container">
                 <div class="row">
 
@@ -53,8 +51,8 @@
                         <div class="form-group"></div>
                         <label for=fecha_ingreso>Fecha Ingreso</label>
 
-                        <%= f.date_field :fecha_ingreso,:required => "true" , class:'form-control', type:'date' %>
 
+                        <%= f.date_field :fecha_ingreso, :id=> "datepicker-input",:required => "true" , class:'form-control', type:'date' %>
 
 
                       </div>
@@ -90,6 +88,13 @@
 </div>
 
 <% end %>
+<script>
+    $(document).ready(function()
+    {
+        $( ".datepicker-input" ).datepicker( "option", "yearRange", "-99:+0" );
+        $( ".datepicker-input" ).datepicker( "option", "maxDate", "+0m +0d" );
+    });
+</script>
 <script>
     $( document ).ready(function() {
 

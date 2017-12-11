@@ -13,12 +13,21 @@ class RutasController < ApplicationController
     @horario=Horario.all
   end
   def crear
+    @empresa=Empresa.all
+    @horario=Horario.all
     @ruta=Ruta.new(ruta_params)
     respond_to do |format|
-      if @ruta.save
-        format.html {redirect_to rutas_path(@ruta),notice: 'Se Agrego Una Nueva Ruta'}
+      if @ruta.valid?
+        if @ruta.save
+          format.html { redirect_to @ruta, notice: 'ruta Creada Satisfactoriamente' }
+          format.json { render :mostrar, status: :created, location: @ruta }
+        else
+          format.html { render :nuevo }
+          format.json { render json: @ruta.errors, status: :unprocessable_entity }
+        end
       else
-        format.html{redirect_to :nueva_ruta_path}
+        format.html { render :nuevo }
+        format.json { render json: @ruta.errors, status: :unprocessable_entity }
       end
     end
   end

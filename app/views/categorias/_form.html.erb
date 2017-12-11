@@ -1,10 +1,4 @@
 <%= form_for(@categoria, :url => categorias_path , :html => {:role => 'form'})  do |f|%>
-    <% if @categoria.errors.any? %>
-        <%= pluralize(@categoria.errors.count, "Errores") %>
-        <% @categoria.errors.full_messages.each do |error| %>
-            <%= error %>
-        <% end %>
-    <% end %>
     <div class="right_col" role="main">
       <div class="row">
         <div class="row">
@@ -14,7 +8,15 @@
               <div class="x_content">
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
+                <% if @categoria.errors.any? %>
+                  <div class="alert alert-danger">
+                    <a class="close" data-dismiss="alert"> × </a>
+                    <Strong><%= pluralize(@categoria.errors.count, "Error") %></Strong>
+                    <% @categoria.errors.full_messages.each do |error| %>
+                      <li>Error! <%= error %></li>
+                    <% end %>
+                <% end %>
+                </div>
                 <div class="container">
                   <div class="row">
 

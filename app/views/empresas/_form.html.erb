@@ -3,7 +3,6 @@
 <%end%>
 <%= form_for(@empresa, :html => { class: 'form_dark' })  do |f|%>
 
-
     <div class="right_col" role="main">
       <div class="row">
         <div class="row">
@@ -13,7 +12,15 @@
               <div class="x_content">
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
+                <% if @empresa.errors.any? %>
+                  <div class="alert alert-danger">
+                    <a class="close" data-dismiss="alert"> × </a>
+                    <Strong><%= pluralize(@empresa.errors.count, "Error") %></Strong>
+                    <% @empresa.errors.full_messages.each do |error| %>
+                      <li>Error! <%= error %></li>
+                    <% end %>
+                <% end %>
+                </div>
                 <div class="container">
                   <div class="row">
 
@@ -25,6 +32,7 @@
                           <div class="form-group"></div>
                           <label for=nombre>Rut</label>
                           <%=f.text_field :rut ,:required => "true", class:'form-control'%>
+
                         </div>
                         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                           <div class="form-group"></div>
