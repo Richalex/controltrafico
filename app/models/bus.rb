@@ -4,6 +4,7 @@ class Bus < ApplicationRecord
                       :message => " No Valida (XXXX00-XX0000)"
 
   validates_presence_of :num_maquina, message: " No Puede Estar En Blanco"
+  validates_presence_of :anio_vehiculo, message: " No Puede Estar En Blanco"
   validates_presence_of :placa_patente, message: " No Puede Estar En Blanco"
   validates_presence_of :numero_motor, message: " No Puede Estar En Blanco"
   validates_presence_of :numero_chasis, message: " No Puede Estar En Blanco"

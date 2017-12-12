@@ -14,7 +14,7 @@ class CategoriasController < ApplicationController
     respond_to do |format|
       if @categoria.valid?
         if @categoria.save
-          format.html { redirect_to @categoria, notice: 'Categoria Creada Satisfactoriamente' }
+          format.html { redirect_to categoria_url(@categoria), notice: 'Categoria Creada Satisfactoriamente' }
           format.json { render :mostrar, status: :created, location: @categoria }
         else
           format.html { render :nuevo }
